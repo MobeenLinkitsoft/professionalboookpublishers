@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  /* Exact Colors from the Screenshot */
+  --color-np-gold: #bca061;
+  --color-np-gold-hover: #9c844f;
+  --color-np-dark: #1a1a1a;
+  --color-np-beige: #f6f4ef;
+  --color-np-cream: #fbfbf9;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 antialiased;
+  }
+}
