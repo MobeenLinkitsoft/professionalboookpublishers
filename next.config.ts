@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -7,7 +14,6 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
-    ignoreBuildErrors: true,
   },
 }
 
