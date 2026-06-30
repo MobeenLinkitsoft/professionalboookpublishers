@@ -7,8 +7,8 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
+    ignoreBuildErrors: true,
   },
-  ignoreBuildErrors: true,
 }
 
 module.exports = nextConfig
