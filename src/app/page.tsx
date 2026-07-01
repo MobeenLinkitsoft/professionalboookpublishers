@@ -9,29 +9,87 @@ export default function Home() {
 
   return (
     <>
+      {/* Custom Styles for Hero Background Animation */}
+      <style>{`
+        @keyframes slideBackground {
+          0% { background-position: left center; }
+          100% { background-position: right center; }
+        }
+        .animate-hero-bg {
+          background-image: url('/bg.png');
+          background-size: 150% auto; /* Makes the image wider than the screen to allow panning */
+          background-repeat: no-repeat;
+          /* Adjust the '40s' below to make the movement faster or slower */
+          animation: slideBackground 40s linear infinite alternate;
+        }
+        
+        /* Ensure background covers nicely on smaller screens */
+        @media (max-width: 768px) {
+          .animate-hero-bg {
+            background-size: cover;
+            animation: slideBackground 30s linear infinite alternate;
+          }
+        }
+      `}</style>
+
       {/* 1. Hero Section */}
-      <section className="relative w-full py-32 flex justify-center items-center bg-[url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 bg-[#151515]/90 border border-gray-700 p-12 md:p-16 text-center max-w-4xl shadow-2xl backdrop-blur-sm">
-          <p className="text-np-gold uppercase tracking-[0.2em] text-sm mb-4">
-            Expert Book Publishing Services in the USA
-          </p>
-          <h1 className="text-5xl md:text-6xl text-white font-serif font-medium mb-6 leading-tight">
-            We Help Writers Become <br /> Bestselling Authors
-          </h1>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            With the right support, strategy, and publishing process, your story
-            can go farther than you ever imagined. We're here to guide you,
-            step-by-step, and help you make your mark in the book world.
-          </p>
+      <section className="relative w-full min-h-[90vh] py-20 flex items-center animate-hero-bg overflow-hidden">
+        {/* Dark overlay for text readability against the sliding background */}
+        <div className="absolute inset-0 bg-black/5"></div> 
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full">
           
-          {/* TRIGGERS MODAL */}
-          <button 
-            onClick={openModal}
-            className="bg-np-gold hover:bg-np-gold-hover text-white font-bold uppercase tracking-widest px-10 py-4 transition"
-          >
-            Let's Get Started
-          </button>
+          {/* Left Side: Text & CTA */}
+          <div className="flex flex-col items-start text-left">
+            <p className="text-np-gold uppercase tracking-[0.2em] text-sm mb-4 font-semibold">
+              Expert Book Publishing Services in the USA
+            </p>
+            <h1 className="text-5xl md:text-6xl text-white font-serif font-medium mb-6 leading-tight">
+              We Help Writers Become <br /> Bestselling Authors
+            </h1>
+            <p className="text-gray-300 mb-8 max-w-lg text-lg leading-relaxed">
+              With the right support, strategy, and publishing process, your story
+              can go farther than you ever imagined. We're here to guide you,
+              step-by-step, and help you make your mark in the book world.
+            </p>
+            
+            {/* TRIGGERS MODAL */}
+            <button 
+              onClick={openModal}
+              className="bg-np-gold hover:bg-np-gold-hover text-white font-bold uppercase tracking-widest px-10 py-4 transition shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+            >
+              Let's Get Started
+            </button>
+          </div>
+
+          {/* Right Side: Professional Book Collage */}
+          <div className="relative hidden md:block h-[550px] w-full perspective-1000">
+            {/* Book 1 (Top Left) */}
+            <div className="absolute top-4 left-4 w-[30%] aspect-[2/3] rounded-sm shadow-2xl transform -rotate-6 hover:-translate-y-2 hover:rotate-0 transition-all duration-300 z-10 border border-white/10">
+              <Image src="/Book/Book12.jpg" alt="Published Book" fill className="object-cover rounded-sm" />
+            </div>
+            
+            {/* Book 2 (Top Right) */}
+            <div className="absolute top-0 right-4 w-[30%] aspect-[2/3] rounded-sm shadow-2xl transform rotate-12 hover:-translate-y-2 hover:rotate-0 transition-all duration-300 z-10 border border-white/10">
+              <Image src="/Book/Book45.jpg" alt="Published Book" fill className="object-cover rounded-sm" />
+            </div>
+            
+            {/* Book 3 (Bottom Left) */}
+            <div className="absolute bottom-12 left-10 w-[25%] aspect-[2/3] rounded-sm shadow-2xl transform -rotate-12 hover:-translate-y-2 hover:rotate-0 transition-all duration-300 z-20 border border-white/10">
+              <Image src="/Book/Book75.jpg" alt="Published Book" fill className="object-cover rounded-sm" />
+            </div>
+            
+            {/* Book 4 (Bottom Right) */}
+            <div className="absolute bottom-16 right-12 w-[28%] aspect-[2/3] rounded-sm shadow-2xl transform rotate-6 hover:-translate-y-2 hover:rotate-0 transition-all duration-300 z-20 border border-white/10">
+              <Image src="/Book/Book28.jpg" alt="Published Book" fill className="object-cover rounded-sm" />
+            </div>
+            
+            {/* Book 5 (Center Focus - Larger & Golden Border) */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[42%] aspect-[2/3] rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-30 border-2 border-np-gold hover:scale-105 transition-all duration-500">
+              <Image src="/Book/Book7.jpg" alt="Featured Published Book" fill className="object-cover rounded-sm" />
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -77,7 +135,7 @@ export default function Home() {
                   Chat With Us
                 </span>
                 <span className="font-bold text-gray-900">
-                  +1 (833) 501-7080
+                  +1 (888) 919-9811
                 </span>
               </div>
             </div>
@@ -129,10 +187,10 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { num: "5+", label: "Years of Experience" },
+              { num: "25+", label: "Years of Experience" },
               { num: "120+", label: "Expert Team" },
-              { num: "1678+", label: "Books Published" },
-              { num: "1000+", label: "Happy Authors" },
+              { num: "16780+", label: "Books Published" },
+              { num: "10000+", label: "Happy Authors" },
             ].map((stat, i) => (
               <div key={i}>
                 <p className="text-5xl font-serif text-np-gold font-bold mb-2">{stat.num}</p>
@@ -143,7 +201,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Categories Section (Images Fixed) */}
+      {/* 5. Categories Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-np-gold uppercase tracking-widest text-sm font-semibold mb-2">
@@ -159,7 +217,6 @@ export default function Home() {
             <div className="bg-np-beige flex items-center justify-center h-48 font-serif text-lg font-bold">Travel Books</div>
             <div className="bg-np-beige flex items-center justify-center h-48 font-serif text-lg font-bold">Children's Books</div>
             
-            {/* Added real images for the bottom row */}
             <div className="relative h-48 w-full"><Image src="/Book/Book1.jpg" fill className="object-cover border border-gray-200" alt="Category 1"/></div>
             <div className="relative h-48 w-full"><Image src="/Book/Book2.jpg" fill className="object-cover border border-gray-200" alt="Category 2"/></div>
             <div className="relative h-48 w-full"><Image src="/Book/Book3.jpg" fill className="object-cover border border-gray-200" alt="Category 3"/></div>
@@ -177,12 +234,12 @@ export default function Home() {
             </Link>
           </div>
           <p className="text-sm text-gray-500 mt-4">
-            Or call us at <span className="font-bold text-np-gold">+1 (833) 501-7080</span>
+            Or call us at <span className="font-bold text-np-gold">+1 (888) 919-9811</span>
           </p>
         </div>
       </section>
 
-      {/* 6. NEW: Published Books Portfolio Section (Missing in original) */}
+      {/* 6. Published Books Portfolio Section */}
       <section className="py-24 bg-np-beige text-center">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-np-gold uppercase tracking-widest text-sm font-semibold mb-2">
@@ -193,7 +250,6 @@ export default function Home() {
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
-            {/* Maps exactly 10 images from your public folder */}
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
               <div key={num} className="relative aspect-[2/3] shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <Image src={`/Book/Book${num}.jpg`} alt={`Published Book ${num}`} fill className="object-cover border border-gray-200 bg-white" />
@@ -232,7 +288,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. NEW: Commonly Asked Questions Section (Missing in original) */}
+      {/* 8. Commonly Asked Questions Section */}
       <section className="py-24 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-serif font-bold text-gray-900 mb-12 text-center">
@@ -280,7 +336,7 @@ export default function Home() {
         </button>
         <p className="mt-4 text-sm text-gray-600">
           Or call us at{" "}
-          <span className="font-bold text-np-gold">+1 (833) 501-7080</span> for
+          <span className="font-bold text-np-gold">+1 (888) 919-9811</span> for
           quick support.
         </p>
       </section>

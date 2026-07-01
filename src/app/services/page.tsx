@@ -170,7 +170,7 @@ export default function ServicesPage() {
               Consult An Expert
             </button>
             <p className="text-white font-medium">
-              or call <span className="text-np-gold">+1 (833) 501-7080</span>
+              or call <span className="text-np-gold">+1 (888) 919-9811</span>
             </p>
           </div>
         </div>

@@ -24,9 +24,9 @@ export default function Footer() {
             We help authors publish with confidence. Whether it's your first book or your next bestseller, we provide expert publishing solutions tailored for success.
           </p>
           <div className="space-y-2">
-            <p className="text-white font-serif text-xl tracking-wide">+1 (833) 501-7080</p>
+            <p className="text-white font-serif text-xl tracking-wide">+1 (888) 919-9811</p>
             <p className="text-sm hover:text-np-gold transition-colors cursor-pointer inline-block">
-              support@professionalbookpublishers.com
+              info@professionalbookspublishers.com
             </p>
           </div>
         </div>

@@ -96,7 +96,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-serif text-gray-900 mb-2">
                   Phone:
                 </h3>
-                <p className="font-bold text-gray-900">+1 (833) 501-7080</p>
+                <p className="font-bold text-gray-900">+1 (888) 919-9811</p>
               </div>
 
               <div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   Email:
                 </h3>
                 <p className="font-bold text-gray-900">
-                  support@professionalbookpublishers.com
+                  info@professionalbookspublishers.com
                 </p>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function ContactPage() {
           </button>
           <p className="mt-6 text-sm text-gray-600 flex items-center justify-center gap-2">
             Or call us at{" "}
-            <span className="font-bold text-np-gold">+1 (833) 501-7080</span>{" "}
+            <span className="font-bold text-np-gold">+1 (888) 919-9811</span>{" "}
             for quick support.
            
           </p>

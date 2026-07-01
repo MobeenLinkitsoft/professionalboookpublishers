@@ -8,10 +8,10 @@ export default function Header() {
       <div className="bg-black text-white text-xs py-2 px-6 flex justify-between items-center border-b border-gray-800">
         <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
           <p className="flex items-center gap-2">
-            <span className="text-np-gold">✉</span> support@professionalbookpublishers.com
+            <span className="text-np-gold">✉</span> info@professionalbookspublishers.com
           </p>
           <div className="flex gap-6 items-center">
-            <p>CALL US AT: +1 (833) 501-7080</p>
+            <p>CALL US AT: +1 (888) 919-9811</p>
             {/* <button className="bg-np-gold hover:bg-np-gold-hover text-white px-4 py-1 font-semibold transition">
               Live Chat
             </button> */}

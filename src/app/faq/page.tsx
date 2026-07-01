@@ -160,7 +160,7 @@ export default function FAQPage() {
           Consult An Expert
         </button>
         <p className="mt-6 text-sm text-gray-600 flex items-center justify-center gap-2">
-          Or call us at <span className="font-bold text-np-gold">+1 (833) 501-7080</span> for quick support. 
+          Or call us at <span className="font-bold text-np-gold">+1 (888) 919-9811</span> for quick support. 
           <span className="text-np-gold ml-2">💬 Live Chat</span>
         </p>
       </section>

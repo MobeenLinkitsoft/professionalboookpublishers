@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
         <p>We implement industry-standard security measures to protect your personal data and your manuscript from unauthorized access, alteration, or disclosure.</p>
 
         <h3 className="text-2xl font-bold mt-8 mb-4">Contact Us</h3>
-        <p>If you have any questions about this Privacy Policy, please contact us at support@professionalbookpublishers.com.</p>
+        <p>If you have any questions about this Privacy Policy, please contact us at info@professionalbookspublishers.com.</p>
       </section>
     </div>
   );

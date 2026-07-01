@@ -117,7 +117,7 @@ export default function PortfolioPage() {
             Consult An Expert
           </button>
           <p className="mt-6 text-sm text-gray-600">
-            Or call us at <span className="font-bold text-np-gold">+1 (833) 501-7080</span> for quick support.
+            Or call us at <span className="font-bold text-np-gold">+1 (888) 919-9811</span> for quick support.
           </p>
         </div>
       </section>
